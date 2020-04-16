@@ -20,3 +20,12 @@ resource "cloudflare_record" "root" {
   type    = "A"
   ttl     = 3600
 }
+
+resource "cloudflare_record" "mx-example" {
+  zone_id  = cloudflare_zone.souschefs-org.id
+  name     = "@"
+  value    = "192.168.0.1"
+  priority = 15
+  type     = "MX"
+  ttl      = 3600
+}
