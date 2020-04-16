@@ -5,7 +5,7 @@ resource "cloudflare_zone" "sous-chefs-org" {
 }
 
 resource "cloudflare_record" "sous-chefs-org-root" {
-  zone_id = var.sous-chefs_zone_id
+  zone_id = cloudflare_zone.sous-chefs-org.id
   name    = "@"
   value   = "185.199.108.153"
   type    = "A"
@@ -13,7 +13,7 @@ resource "cloudflare_record" "sous-chefs-org-root" {
 }
 
 resource "cloudflare_record" "sous-chefs-org-www" {
-  zone_id = var.sous-chefs_zone_id
+  zone_id = cloudflare_zone.sous-chefs-org.id
   name    = "www"
   value   = "sous-chefs.github.io"
   type    = "CNAME"
