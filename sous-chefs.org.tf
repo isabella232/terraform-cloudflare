@@ -4,7 +4,7 @@ resource "cloudflare_zone" "sous-chefs.org" {
   plan = "free"
 }
 
-resource "cloudflare_record" "root" {
+resource "cloudflare_record" "sous-chefs-org-root" {
   zone_id = var.sous-chefs_zone_id
   name    = "@"
   value   = "185.199.108.153"
@@ -12,7 +12,7 @@ resource "cloudflare_record" "root" {
   ttl     = 3600
 }
 
-resource "cloudflare_record" "www" {
+resource "cloudflare_record" "sous-chefs-org-www" {
   zone_id = var.sous-chefs_zone_id
   name    = "www"
   value   = "sous-chefs.github.io"
@@ -20,7 +20,7 @@ resource "cloudflare_record" "www" {
   ttl     = 3600
 }
 
-resource "cloudflare_record" "mx-gmail-aspmx" {
+resource "cloudflare_record" "sous-chefs-org-mx-gmail-aspmx" {
   zone_id  = cloudflare_zone.sous-chefs-org.id
   name     = "@"
   value    = "aspmx.l.google.com"
@@ -29,7 +29,7 @@ resource "cloudflare_record" "mx-gmail-aspmx" {
   ttl      = 3600
 }
 
-resource "cloudflare_record" "mx-gmail-alt1" {
+resource "cloudflare_record" "sous-chefs-org-mx-gmail-alt1" {
   zone_id  = cloudflare_zone.sous-chefs-org.id
   name     = "@"
   value    = "alt1.aspmx.l.google.com"
@@ -38,7 +38,7 @@ resource "cloudflare_record" "mx-gmail-alt1" {
   ttl      = 3600
 }
 
-resource "cloudflare_record" "mx-gmail-alt2" {
+resource "cloudflare_record" "sous-chefs-org-mx-gmail-alt2" {
   zone_id  = cloudflare_zone.sous-chefs-org.id
   name     = "@"
   value    = "alt2.aspmx.l.google.com"
@@ -47,7 +47,7 @@ resource "cloudflare_record" "mx-gmail-alt2" {
   ttl      = 3600
 }
 
-resource "cloudflare_record" "mx-gmail-alt3" {
+resource "cloudflare_record" "sous-chefs-org-mx-gmail-alt3" {
   zone_id  = cloudflare_zone.sous-chefs-org.id
   name     = "@"
   value    = "alt3.aspmx.l.google.com"
@@ -56,7 +56,7 @@ resource "cloudflare_record" "mx-gmail-alt3" {
   ttl      = 3600
 }
 
-resource "cloudflare_record" "mx-gmail-alt4" {
+resource "cloudflare_record" "sous-chefs-org-mx-gmail-alt4" {
   zone_id  = cloudflare_zone.sous-chefs-org.id
   name     = "@"
   value    = "alt4.aspmx.l.google.com"
@@ -65,7 +65,7 @@ resource "cloudflare_record" "mx-gmail-alt4" {
   ttl      = 3600
 }
 
-resource "cloudflare_record" "google-verification" {
+resource "cloudflare_record" "sous-chefs-org-google-verification" {
   zone_id  = cloudflare_zone.sous-chefs-org.id
   name     = "@"
   value    = "2yok3u3hmqnuog3o6godzgqjakngcvuradqb7xrkh3g6zkd6j2dq.mx-verification.google.com"
