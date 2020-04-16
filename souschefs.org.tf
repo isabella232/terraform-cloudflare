@@ -24,7 +24,7 @@ resource "cloudflare_record" "root" {
 resource "cloudflare_record" "mx-example" {
   zone_id  = cloudflare_zone.souschefs-org.id
   name     = "@"
-  value    = "192.168.0.1"
+  value    = "terraform.souschefs.org"
   priority = 15
   type     = "MX"
   ttl      = 3600
