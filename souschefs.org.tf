@@ -12,3 +12,11 @@ resource "cloudflare_record" "terraform" {
   type    = "A"
   ttl     = 3600
 }
+
+resource "cloudflare_record" "root" {
+  zone_id = cloudflare_zone.souschefs-org.id
+  name    = "@"
+  value   = "192.168.0.1"
+  type    = "A"
+  ttl     = 3600
+}
