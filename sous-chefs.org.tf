@@ -1,5 +1,5 @@
 # Our main domain
-resource "cloudflare_zone" "sous-chefs.org" {
+resource "cloudflare_zone" "sous-chefs-org" {
   zone = "sous-chefs.org"
   plan = "free"
 }
