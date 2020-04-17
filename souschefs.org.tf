@@ -5,27 +5,11 @@ resource "cloudflare_zone" "souschefs-org" {
   plan = "free"
 }
 
-resource "cloudflare_record" "terraform" {
+# 1 record is required by cloudflare
+resource "cloudflare_record" "souschefs-org-not-used" {
   zone_id = cloudflare_zone.souschefs-org.id
-  name    = "terraform"
+  name    = "notused"
   value   = "192.168.0.1"
   type    = "A"
   ttl     = 3600
-}
-
-resource "cloudflare_record" "root" {
-  zone_id = cloudflare_zone.souschefs-org.id
-  name    = "@"
-  value   = "192.168.0.1"
-  type    = "A"
-  ttl     = 3600
-}
-
-resource "cloudflare_record" "mx-example" {
-  zone_id  = cloudflare_zone.souschefs-org.id
-  name     = "@"
-  value    = "terraform.souschefs.org"
-  priority = 15
-  type     = "MX"
-  ttl      = 3600
 }
